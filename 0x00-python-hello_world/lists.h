@@ -9,7 +9,7 @@
  * @next: points to the next node
  *
  * Description: singly linked list node structure
- * 
+ *
  */
 typedef struct listint_s
 {
@@ -22,4 +22,21 @@ listint_t *add_nodeint(listint_t **head, const int n);
 void free_listint(listint_t *head);
 int check_cycle(listint_t *list);
 
+/**
+ * is_member - Checks if a given pointer is a member
+ *             of a list.
+ * @list: The list.
+ * @node: The node to check.
+ *
+ * Return: 1 true otherwise, 0.
+ */
+int is_member(listint_t *list, listint_t *node);
+
+
+/**
+ * add_nodeptr - Adds a new node pointer add the end the a list.
+ * @list: A pinter to the head of the list.
+ * @node: The node to add.
+ */
+void add_nodeptr(listint_t *list, listint_t *node);
 #endif /* LISTS_H */
