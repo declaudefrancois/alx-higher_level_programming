@@ -1,0 +1,40 @@
+Module for testing BaseGeometry class.
+======================================
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> bg = BaseGeometry()
+
+
+Test integer_validator.  
+-----------------------
+Should not throw if value is int & > 0.
+
+>>> bg.integer_validator("my_int", 12)
+>>> bg.integer_validator("width", 89)
+
+should raise TypeError if value is not an integer.
+>>> bg.integer_validator("name", "John")
+Traceback (most recent call last):
+TypeError: name must be an integer
+
+
+should raise ValueError if value <= 0
+>>> bg.integer_validator("name", -10)
+Traceback (most recent call last):
+...
+ValueError: name must be greater than 0
+
+
+should raise ValueError if value <= 0
+>>> bg.integer_validator("name", 0)
+Traceback (most recent call last):
+...
+ValueError: name must be greater than 0
+
+
+Test area:
+---------
+Should raise Exception.
+>>> bg.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
