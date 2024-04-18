@@ -22,22 +22,16 @@ def run():
     """
     stats = {
         'size': 0,
-        '200': 0,
-        '301': 0,
-        '400': 0,
-        '401': 0,
-        '403': 0,
-        '404': 0,
-        '405': 0,
-        '500': 0
     }
 
     try:
         i = 0
         for line in sys.stdin:
+            if not len(line.strip()):
+                continue
             status, size = line.strip('\n').split(' ')[-2:]
             stats['size'] += int(size)
-            stats[status] += int(status)
+            stats[status] = stats.get(status, 0) + 1
 
             i += 1
             if i % 10 == 0:
