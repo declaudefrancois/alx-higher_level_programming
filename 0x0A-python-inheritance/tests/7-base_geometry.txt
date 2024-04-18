@@ -17,6 +17,17 @@ should raise TypeError if value is not an integer.
 Traceback (most recent call last):
 TypeError: name must be an integer
 
+>>> bg.integer_validator("name", (4,))
+Traceback (most recent call last):
+TypeError: name must be an integer
+
+>>> bg.integer_validator("name", [3])
+Traceback (most recent call last):
+TypeError: name must be an integer
+
+>>> bg.integer_validator("name", {'key': 55})
+Traceback (most recent call last):
+TypeError: name must be an integer
 
 should raise ValueError if value <= 0
 >>> bg.integer_validator("name", -10)
@@ -30,6 +41,12 @@ should raise ValueError if value <= 0
 Traceback (most recent call last):
 ...
 ValueError: name must be greater than 0
+
+shoud raise TypeError is value is None
+>> bg.integer_validator("name")
+Traceback (most recent call last):
+TypeError: name must be an integer
+
 
 
 Test area:

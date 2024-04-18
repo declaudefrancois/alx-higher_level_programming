@@ -1,4 +1,4 @@
-#!/usr/bin/ptyhon3
+#!/usr/bin/python3
 """
 Defines the lookup function module
 to list of available attributes and methods of an object.

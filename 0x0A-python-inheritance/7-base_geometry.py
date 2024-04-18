@@ -26,7 +26,7 @@ class BaseGeometry:
             TypeError: If width or height is not integer.
             ValueError: If width or height is less than 0.
         """
-        if value.__class__.__name__ != int.__name__:
+        if value is None or value.__class__.__name__ != int.__name__:
             raise TypeError("{} must be an integer".format(name))
 
         if value <= 0:
